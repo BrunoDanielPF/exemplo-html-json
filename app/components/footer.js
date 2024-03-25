@@ -18,7 +18,7 @@ const Footer = ({ footer }) => {
   );
 
   return (
-    <footer className="w-full bg-gray-800 text-white py-4 px-8 mt-8">
+    <footer className="w-full bg-[#180606] text-white py-4 px-8 mt-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div>
           <h2 className="font-bold mb-2">Links Úteis</h2>

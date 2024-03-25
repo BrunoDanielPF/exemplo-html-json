@@ -3,6 +3,13 @@ import React, { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "./styles/styles.css"
+import Image from 'next/image';
+import juJitsu from "../public/juJitsu.png"
+import boxing from "../public/boxing.png"
+import taekwondo from "../public/taekwondo.jpg"
+import karate from "../public/karate.jpg"
+import kungFu from "../public/kungFu.jpg"
+import kickBoxing from "../public/kickBoxing.jpg"
 
 const Carousel_Component = ({items}) => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -15,19 +22,55 @@ const Carousel_Component = ({items}) => {
     created() {
       setLoaded(true)
     },
-  })
+    slides: {
+      perView: 2,
+      spacing: 5,
+    },
+      loop: true,
+    },
+    
+    [
+      (slider) => {
+        let timeout
+        let mouseOver = false
+        function clearNextTimeout() {
+          clearTimeout(timeout)
+        }
+        function nextTimeout() {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => {
+            slider.next()
+          }, 5000)
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true
+            clearNextTimeout()
+          })
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false
+            nextTimeout()
+          })
+          nextTimeout()
+        })
+        slider.on("dragStarted", clearNextTimeout)
+        slider.on("animationEnded", nextTimeout)
+        slider.on("updated", nextTimeout)
+      },
+    ]
+  )
 
   return (
     <>
-      <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider">
-            {
-                items.map((item) => (
-                    <div key={item.id} className="keen-slider__slide number-slide1">
-                        <img src={item.imagem} alt={`Imagem ${item.id}`} />
-                    </div>
-                ))
-            }
+      <div className="navigation-wrapper w-11/12 items-center m-auto ">
+        <div ref={sliderRef} className="keen-slider rounded-3xl mt-16">
+          <div className="keen-slider__slide number-slide1"><Image className="w-full" src={juJitsu}></Image></div>
+          <div className="keen-slider__slide number-slide2"><Image className="w-full mt-40" src={boxing}></Image></div>
+          <div className="keen-slider__slide number-slide3"><Image className="w-full" src={karate}></Image></div>
+          <div className="keen-slider__slide number-slide4"><Image className="w-full" src={kungFu}></Image></div>
+          <div className="keen-slider__slide number-slide5"><Image className="w-full h-full" src={kickBoxing}></Image></div>
+          <div className="keen-slider__slide number-slide6"><Image className="w-full" src={taekwondo}></Image></div>
         </div>
         {loaded && instanceRef.current && (
           <>
@@ -51,23 +94,6 @@ const Carousel_Component = ({items}) => {
           </>
         )}
       </div>
-      {loaded && instanceRef.current && (
-        <div className="dots">
-          {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => {
-            return (
-              <button
-                key={idx}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(idx)
-                }}
-                className={"dot" + (currentSlide === idx ? " active" : "")}
-              ></button>
-            )
-          })}
-        </div>
-      )}
     </>
   )
 }
@@ -75,22 +101,25 @@ const Carousel_Component = ({items}) => {
 function Arrow(props) {
   const disabled = props.disabled ? " arrow--disabled" : ""
   return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabled}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
+    <div className="relative w-[1550px] items-center right-12 bottom-36">
+      <svg
+        onClick={props.onClick}
+        className={`arrow ${
+          props.left ? "arrow--left" : "arrow--right"
+        } ${disabled}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        {props.left && (
+          <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        )}
+        {!props.left && (
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        )}
+      </svg>
+    </div>
   )
 }
+
 
 export default Carousel_Component;

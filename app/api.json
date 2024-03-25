@@ -13,12 +13,17 @@
                     "id":1,
                     "label":"sobre",
                     "url" : "/sobre"
+                },
+                {
+                    "id":2,
+                    "label":"histoy",
+                    "url" : "/history"
                 }
             ]
         },
         {
             "id": 2,
-            "label": "Produtos",
+            "label": "Sobre nós",
             "url": "/produtos",
             "sub_item" : [
                 {
@@ -30,29 +35,38 @@
         },
         {
             "id": 3,
-            "label": "Sobre",
+            "label": "Contato",
             "url": "/sobre"
         },
         {
             "id": 4,
-            "label": "Contato",
+            "label": "Conheça nossos produtos",
             "url": "/contato"
         }
     ],
     "produtos": [
         {
             "id": 1,
-            "titulo": "Produto 1",
+            "titulo": "Equipamentos",
+            "image": "public/armas.jpg",
             "descricao": "Descrição do Produto 1"
         },
         {
             "id": 2,
-            "titulo": "Produto 2",
+            "titulo": "Suplementos",
+            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 2"
         },
         {
             "id": 3,
-            "titulo": "Produto 3",
+            "titulo": "Vestimentas",
+            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
+            "descricao": "Descrição do Produto 3"
+        },
+        {
+            "id": 4,
+            "titulo": "Armas",
+            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 3"
         }
     ],
