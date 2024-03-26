@@ -48,25 +48,25 @@
         {
             "id": 1,
             "titulo": "Equipamentos",
-            "image": "public/armas.jpg",
+            "image": "https://th.bing.com/th/id/OIP.tTWopNe8-9-MzyPZy1GlLwAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 1"
         },
         {
             "id": 2,
             "titulo": "Suplementos",
-            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
+            "image": "https://th.bing.com/th/id/OIP.tTWopNe8-9-MzyPZy1GlLwAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 2"
         },
         {
             "id": 3,
             "titulo": "Vestimentas",
-            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
+            "image": "https://th.bing.com/th/id/OIP.tTWopNe8-9-MzyPZy1GlLwAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 3"
         },
         {
             "id": 4,
             "titulo": "Armas",
-            "image": "https://th.bing.com/th/id/OIP.9prfdtGx9TKBrfQxuLmlJAAAAA?rs=1&pid=ImgDetMain",
+            "image": "https://th.bing.com/th/id/OIP.tTWopNe8-9-MzyPZy1GlLwAAAA?rs=1&pid=ImgDetMain",
             "descricao": "Descrição do Produto 3"
         }
     ],
