@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from "../public/logo-removebg-preview.png"
 
 const Footer = ({ footer }) => {
   const renderFooterLinks = () => (
@@ -19,19 +21,20 @@ const Footer = ({ footer }) => {
 
   return (
     <footer className="w-full bg-[#180606] text-white py-4 px-8 mt-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <Image className="w-60" src={logo}></Image>
         <div>
-          <h2 className="font-bold mb-2">Links Úteis</h2>
+          <h2 className="font-protest-guerrila mb-2">Links Úteis</h2>
           {renderFooterLinks()}
         </div>
         <div>
-          <h2 className="font-bold mb-2">Contato</h2>
+          <h2 className="font-protest-guerrila mb-2">Contato</h2>
           <p>{footer.contato.telefone}</p>
           <p>{footer.contato.email}</p>
           <p>{footer.contato.endereco}</p>
         </div>
         <div>
-          <h2 className="font-bold mb-2">Redes Sociais</h2>
+          <h2 className="font-protest-guerrila mb-2">Redes Sociais</h2>
           {renderRedesSociais()}
         </div>
       </div>
