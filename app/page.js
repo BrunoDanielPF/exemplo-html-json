@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Nav_bar_component data={data.nav_bar}></Nav_bar_component>
       <Carousel_Component items={data.carrossel}></Carousel_Component>
-      <ProductList_Component items={data.produtos}></ProductList_Component>
+      <ProductList_Component items={data}></ProductList_Component>
       <Footer footer={data.footer}></Footer>
     </main>
   );
